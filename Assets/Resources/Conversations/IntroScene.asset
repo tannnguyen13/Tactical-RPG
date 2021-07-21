@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee78e4d8517cd84cbce69b4404e17ae, type: 3}
+  m_Name: IntroScene
+  m_EditorClassIdentifier: 
+  list:
+  - messages:
+    - The time has come...
+    - Are you ready?
+    - This will most likely be our last fight...
+    speaker: {fileID: 21300000, guid: 887fee318138e4043a12120556d9587d, type: 3}
+    anchor: 6
+  - messages:
+    - Yes, milord.
+    - We will fight by your side 'til the very end.
+    speaker: {fileID: 21300000, guid: 887fee318138e4043a12120556d9587d, type: 3}
+    anchor: 8
