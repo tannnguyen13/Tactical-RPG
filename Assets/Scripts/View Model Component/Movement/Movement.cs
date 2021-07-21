@@ -4,10 +4,16 @@ using UnityEngine;
 
 public abstract class Movement : MonoBehaviour
 {
-    public int range;
-    public int jumpHeight;
+    public int range { get { return stats[StatTypes.MOV]; } }
+    public int jumpHeight { get { return stats[StatTypes.JMP]; } }
+    protected Stats stats;
     protected Unit unit;
     protected Transform jumper;
+
+    protected virtual void Start()
+    {
+        stats = GetComponent<Stats>();
+    }
 
     protected virtual void Awake()
     {
