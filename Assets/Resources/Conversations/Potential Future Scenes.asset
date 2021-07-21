@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   list:
   - messages:
-    - I FINALLY CAUGHT YOU TRAITOR!
-    - PREPARE TO DIE!
+    - Bruh
+    - Bruh
     speaker: {fileID: 21300000, guid: 887fee318138e4043a12120556d9587d, type: 3}
     anchor: 6
+  - messages:
+    - Bruh
+    - Bruh
+    speaker: {fileID: 21300000, guid: 887fee318138e4043a12120556d9587d, type: 3}
+    anchor: 8
