@@ -14,6 +14,11 @@ public struct Point
         this.y = y;
     }
 
+    public static implicit operator Vector2(Point p)
+    {
+        return new Vector2(p.x, p.y);
+    }
+
     public static Point operator +(Point a, Point b)
     {
         return new Point(a.x + b.x, a.y + b.y);

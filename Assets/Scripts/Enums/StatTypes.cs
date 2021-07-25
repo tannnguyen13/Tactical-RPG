@@ -16,5 +16,8 @@ public enum StatTypes
     LCK,
     JMP,
     MOV,
+    EVD,
+    CON,
+    CTR,
     Count
 }

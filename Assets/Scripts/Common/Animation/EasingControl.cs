@@ -85,20 +85,22 @@ public class EasingControl : MonoBehaviour
 	
 	public void Pause ()
 	{
-		SetPlayState(PlayState.Paused);
+		if (IsPlaying)
+			SetPlayState(PlayState.Paused);
 	}
 	
 	public void Resume ()
 	{
-		SetPlayState(previousPlayState);
+		if (playState == PlayState.Paused)
+			SetPlayState(previousPlayState);
 	}
 	
 	public void Stop ()
 	{
 		SetPlayState(PlayState.Stopped);
+		previousPlayState = PlayState.Stopped;
 		loops = 0;
-		if (endBehaviour == EndBehaviour.Reset)
-			SeekToBeginning ();
+		OnUpdate();
 	}
 	
 	public void SeekToTime (float time)
@@ -124,21 +126,49 @@ public class EasingControl : MonoBehaviour
 	#endregion
 
 	#region Private
-	void SetPlayState (PlayState target)
-	{
-		if (playState == target)
-			return;
-		
-		previousPlayState = playState;
-		playState = target;
-		
+	protected virtual void OnUpdate()
+    {
+		if (updateEvent != null)
+			updateEvent(this, EventArgs.Empty);
+    }
+
+	protected virtual void OnLoop()
+    {
+		if (loopedEvent != null)
+			loopedEvent(this, EventArgs.Empty);
+    }
+
+	protected virtual void OnComplete()
+    {
+		if (completedEvent != null)
+			completedEvent(this, EventArgs.Empty);
+    }
+
+	protected virtual void OnStateChange()
+    {
 		if (stateChangeEvent != null)
 			stateChangeEvent(this, EventArgs.Empty);
-		
-		StopCoroutine("Ticker");
-		if (IsPlaying)
-			StartCoroutine("Ticker");
-	}
+    }
+
+	void SetPlayState(PlayState target)
+    {
+		if(isActiveAndEnabled)
+        {
+			if (playState == target)
+				return;
+			previousPlayState = playState;
+			playState = target;
+			OnStateChange();
+			StopCoroutine("Ticker");
+			if (IsPlaying)
+				StartCoroutine("Ticker");
+        }
+		else
+        {
+			previousPlayState = target;
+			playState = PlayState.Paused;
+        }
+    }
 
 	IEnumerator Ticker ()
 	{
@@ -179,9 +209,8 @@ public class EasingControl : MonoBehaviour
 		float frameValue = (endValue - startValue) * equation (0.0f, 1.0f, currentTime) + startValue;
 		currentOffset = frameValue - currentValue;
 		currentValue = frameValue;
-		
-		if (updateEvent != null)
-			updateEvent(this, EventArgs.Empty);
+
+		OnUpdate();
 		
 		if (finished)
 		{
@@ -192,15 +221,12 @@ public class EasingControl : MonoBehaviour
 					SeekToBeginning();
 				else // PingPong
 					SetPlayState( playState == PlayState.Playing ? PlayState.Reversing : PlayState.Playing );
-				
-				if (loopedEvent != null)
-					loopedEvent(this, EventArgs.Empty);
+
+				OnLoop();
 			} 
 			else
 			{
-				if (completedEvent != null)
-					completedEvent(this, EventArgs.Empty);
-				
+				OnComplete();
 				Stop ();
 			}
 		}

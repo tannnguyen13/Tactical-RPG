@@ -33,10 +33,14 @@ public static class JobParser
         Job job = obj.GetComponent<Job>();
         for (int i = 1; i < Job.statOrder.Length + 1; ++i)
             job.baseStats[i - 1] = Convert.ToInt32(elements[i]);
+        StatModifierFeature evade = GetFeature(obj, StatTypes.EVD);
+        evade.amount = Convert.ToInt32(elements[9]);
+        StatModifierFeature con = GetFeature(obj, StatTypes.CON);
+        con.amount = Convert.ToInt32(elements[10]);
         StatModifierFeature move = GetFeature(obj, StatTypes.MOV);
-        move.amount = Convert.ToInt32(elements[10]);
+        move.amount = Convert.ToInt32(elements[12]);
         StatModifierFeature jump = GetFeature(obj, StatTypes.JMP);
-        jump.amount = Convert.ToInt32(elements[9]);
+        jump.amount = Convert.ToInt32(elements[11]);
     }
     static void ParseGrowthStats()
     {

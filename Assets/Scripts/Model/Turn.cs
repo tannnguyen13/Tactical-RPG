@@ -8,6 +8,8 @@ public class Turn
     public bool hasUnitMoved;
     public bool hasUnitActed;
     public bool lockMove;
+    public Ability ability;
+    public List<Tile> targets;
     Tile startTile;
     Directions startDir;
 

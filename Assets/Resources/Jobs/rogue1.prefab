@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2584722053606694945}
   - component: {fileID: 17628806172434037}
   - component: {fileID: 147395745513638841}
+  - component: {fileID: -1253992188115953165}
+  - component: {fileID: 2445949806670781321}
   m_Layer: 0
   m_Name: rogue1
   m_TagString: Untagged
@@ -83,3 +85,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 11
   amount: 1
+--- !u!114 &-1253992188115953165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326783740966651559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e9b40496d9b9ac4aa11d40610255606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 13
+  amount: 50
+--- !u!114 &2445949806670781321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326783740966651559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e9b40496d9b9ac4aa11d40610255606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 14
+  amount: 50

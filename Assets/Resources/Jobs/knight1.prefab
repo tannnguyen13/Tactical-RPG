@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4065305252471529928}
   - component: {fileID: 1688784776791347388}
   - component: {fileID: -557181576183091163}
+  - component: {fileID: 6639410036720184132}
+  - component: {fileID: 4920986303545719675}
   m_Layer: 0
   m_Name: knight1
   m_TagString: Untagged
@@ -47,14 +49,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStats: 200000000d0000000d0000000000000000000000040000000500000003000000
   growStats:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 0.9
+  - 0.5
+  - 0.5
+  - 0.05
+  - 0.05
+  - 0.2
+  - 0.1
+  - 0.1
 --- !u!114 &1688784776791347388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,3 +85,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 11
   amount: 1
+--- !u!114 &6639410036720184132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6080901443051244711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e9b40496d9b9ac4aa11d40610255606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 13
+  amount: 50
+--- !u!114 &4920986303545719675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6080901443051244711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e9b40496d9b9ac4aa11d40610255606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 14
+  amount: 50

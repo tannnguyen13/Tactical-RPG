@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5257946605700262432}
   - component: {fileID: 1823442734917765762}
   - component: {fileID: -7124991002605404375}
+  - component: {fileID: 4830068480988515730}
+  - component: {fileID: -7008466327361421679}
   m_Layer: 0
   m_Name: warrior1
   m_TagString: Untagged
@@ -83,3 +85,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 11
   amount: 1
+--- !u!114 &4830068480988515730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836294377469954656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e9b40496d9b9ac4aa11d40610255606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 13
+  amount: 50
+--- !u!114 &-7008466327361421679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836294377469954656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e9b40496d9b9ac4aa11d40610255606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 14
+  amount: 50
